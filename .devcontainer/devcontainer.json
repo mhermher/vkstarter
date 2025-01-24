@@ -1,0 +1,21 @@
+{
+    "name": "My Python Project",
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "python.pythonPath": "/usr/local/bin/python"
+        },
+        "extensions": [
+            "ms-python.python",
+            "ms-python.debugpy",
+            "ms-python.vscode-pylance",
+            "charliermarsh.ruff"
+        ]
+      }
+    },
+    "postCreateCommand": "poetry install",
+    "remoteUser": "vscode",
+    "forwardPorts": [8000]
+  }
