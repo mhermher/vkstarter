@@ -2,8 +2,8 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 
-from vkstarter.db import create_db
-from vkstarter.routers import note
+from vkstarter.db import create_db, engine
+from vkstarter.routers import create_note_router
 
 
 @asynccontextmanager
@@ -15,4 +15,4 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan = lifespan)
 
-app.include_router(note)
+app.include_router(create_note_router(engine))

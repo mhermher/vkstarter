@@ -1,6 +1,6 @@
 from sqlmodel import Field, SQLModel
 
-from .data import AssessmentData, BillingData, DiagnosisData, ExamData, PlanData, ReviewData
+from .data import AssessmentData, BillingData, DiagnosisData, ExamData, PatientData, PlanData, ReviewData, VisitData
 
 
 class ReviewLink(ReviewData):
@@ -30,10 +30,10 @@ class DiagnosisLink(DiagnosisData):
     '''Link model for a diagnosis.'''
     patient_id: int = Field(foreign_key = 'patientrecord.id')
 
-class VisitLink(SQLModel):
+class VisitLink(VisitData):
     '''Link model for a visit.'''
     patient_id: int = Field(foreign_key = 'patientrecord.id')
 
-class PatientLink(SQLModel):
+class PatientLink(PatientData):
     '''Link model for a patient.'''
     pass

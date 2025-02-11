@@ -1,3 +1,3 @@
-from .note import router as note
+from .note import create_router as create_note_router
 
-__all__ = ['note']
+__all__ = ['create_note_router']

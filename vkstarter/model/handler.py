@@ -48,6 +48,8 @@ class Handler[T: SQLModel, R: SQLModel](Protocol):
 
 class PlanHandler(Handler[PlanTree, PlanRecord]):
     '''Handler for plan records.'''
+    tree = PlanTree
+    record = PlanRecord
     @staticmethod
     @override
     def get(id: int, session: Session) -> PlanRecord:
@@ -93,6 +95,8 @@ class PlanHandler(Handler[PlanTree, PlanRecord]):
 
 class BillingHandler(Handler[BillingTree, BillingRecord]):
     '''Handler for billing records.'''
+    tree = BillingTree
+    record = BillingRecord
     @staticmethod
     @override
     def get(id: int, session: Session) -> BillingRecord:
@@ -138,6 +142,8 @@ class BillingHandler(Handler[BillingTree, BillingRecord]):
 
 class AssessmentHandler(Handler[AssessmentTree, AssessmentRecord]):
     '''Handler for assessment records.'''
+    tree = AssessmentTree
+    record = AssessmentRecord
     @staticmethod
     @override
     def get(id: int, session: Session) -> AssessmentRecord:
@@ -183,6 +189,8 @@ class AssessmentHandler(Handler[AssessmentTree, AssessmentRecord]):
 
 class ReviewHandler(Handler[ReviewTree, ReviewRecord]):
     '''Handler for review records.'''
+    tree = ReviewTree
+    record = ReviewRecord
     @staticmethod
     @override
     def get(id: int, session: Session) -> ReviewRecord:
@@ -223,6 +231,8 @@ class ReviewHandler(Handler[ReviewTree, ReviewRecord]):
 
 class ExamHandler(Handler[ExamTree, ExamRecord]):
     '''Handler for exam records.'''
+    tree = ExamTree
+    record = ExamRecord
     @staticmethod
     @override
     def get(id: int, session: Session) -> ExamRecord:
@@ -263,6 +273,8 @@ class ExamHandler(Handler[ExamTree, ExamRecord]):
 
 class DiagnosisHandler(Handler[DiagnosisTree, DiagnosisRecord]):
     '''Handler for diagnosis records.'''
+    tree = DiagnosisTree
+    record = DiagnosisRecord
     @staticmethod
     @override
     def get(id: int, session: Session) -> DiagnosisRecord:
@@ -300,6 +312,8 @@ class DiagnosisHandler(Handler[DiagnosisTree, DiagnosisRecord]):
 
 class VisitHandler(Handler[VisitTree, VisitRecord]):
     '''Handler for visit records.'''
+    tree = VisitTree
+    record = VisitRecord
     @staticmethod
     @override
     def get(id: int, session: Session) -> VisitRecord:
@@ -340,6 +354,8 @@ class VisitHandler(Handler[VisitTree, VisitRecord]):
 
 class PatientHandler(Handler[PatientLeftTree, PatientRecord]):
     '''Handler for patient records.'''
+    tree = PatientLeftTree
+    record = PatientRecord
     @staticmethod
     @override
     def get(id: int, session: Session) -> PatientRecord:
